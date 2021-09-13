@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        * {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <%= console.log('user',user) %>
+        welcome <%= user.name %>
+            <br />
+            <img src='<%=user.picture %>'>
+            <br />
+            email : <%= user.email %>
+                <br />
+                <a href="/" onclick="signOut();">Sign out</a>
+                <script>
+                    function signOut() {
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        auth2.signOut().then(function () {
+                            console.log('User signed out.');
+                        });
+                    };
+                </script>
+</body>
+
+</html>
